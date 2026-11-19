@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Juan Teñoso | Comic Credits</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Roboto+Slab:wght@600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e9a900;
+    color: #21180c;
+    font-family: 'Roboto Slab', serif;
+    overflow-x: hidden;
+}
+
+/* COMIC BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    background:
+      radial-gradient(#8c5700 1.5px, transparent 2px);
+    background-size: 13px 13px;
+    opacity: .22;
+    animation: dots 25s linear infinite;
+}
+
+@keyframes dots {
+    to { transform: rotate(360deg); }
+}
+
+.page {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 25px;
+    position: relative;
+}
+
+/* MAIN COMIC PANEL */
+.poster {
+    background: #ffc928;
+    border: 8px solid #17120b;
+    box-shadow: 15px 15px 0 #17120b;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SUNBURST */
+.poster::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: repeating-conic-gradient(
+        from 0deg,
+        #ffdb51 0deg 8deg,
+        #ffbd16 8deg 16deg
+    );
+    opacity: .48;
+    animation: rotate 100s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.top-label {
+    display: table;
+    margin: auto;
+    padding: 10px 22px;
+    background: #19130c;
+    color: #ffd43b;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 3px;
+    font-size: 20px;
+    transform: rotate(-2deg);
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.crown {
+    font-size: 55px;
+    animation: crown 2s infinite ease-in-out;
+}
+
+@keyframes crown {
+    50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(55px, 10vw, 100px);
+    line-height: .85;
+    color: #d63812;
+    -webkit-text-stroke: 2px #17120b;
+    text-shadow: 6px 6px #17120b;
+    transform: rotate(-2deg);
+    animation: title 3s infinite ease-in-out;
+}
+
+@keyframes title {
+    50% { transform: rotate(2deg) scale(1.025); }
+}
+
+.hero p {
+    display: inline-block;
+    margin-top: 22px;
+    background: #21180c;
+    color: #ffe29a;
+    padding: 10px 25px;
+    font-family: 'Permanent Marker', cursive;
+    transform: rotate(1deg);
+}
+
+/* DECORATIONS */
+.burst {
+    position: absolute;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    color: #e43d12;
+    -webkit-text-stroke: 1px #17120b;
+    animation: float 3s infinite ease-in-out;
+}
+
+.burst.one { top: 150px; left: 2%; }
+.burst.two { top: 250px; right: 3%; animation-delay: 1s; }
+
+@keyframes float {
+    50% { transform: translateY(-15px) rotate(12deg); }
+}
+
+/* CREDITS */
+.credits {
+    max-width: 750px;
+    margin: 15px auto;
+    background: #fff0bd;
+    border: 5px solid #21180c;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 8px 8px 0 #21180c;
+    position: relative;
+}
+
+.credits::before {
+    content: "✦ ✦ ✦";
+    display: block;
+    font-size: 28px;
+    color: #c83d16;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Bangers', cursive;
+    font-size: 38px;
+    background: #21180c;
+    color: #ffcf34;
+    display: inline-block;
+    padding: 8px 25px;
+    transform: rotate(-2deg);
+    margin-bottom: 25px;
+}
+
+.label {
+    font-family: 'Permanent Marker', cursive;
+    color: #c13c15;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.value {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(25px, 5vw, 38px);
+    margin-top: 7px;
+    letter-spacing: 1px;
+}
+
+.small-value {
+    font-size: 26px;
+}
+
+.divider {
+    width: 65%;
+    height: 3px;
+    background: #21180c;
+    margin: 18px auto;
+}
+
+/* ABOUT PROJECT */
+.about {
+    max-width: 650px;
+    margin: 35px auto;
+    background: #fff0bd;
+    border: 5px solid #21180c;
+    padding: 25px;
+    text-align: center;
+    clip-path: polygon(
+      5% 0%, 95% 0%, 100% 12%,
+      96% 25%, 100% 40%, 95% 55%,
+      100% 75%, 94% 100%, 5% 100%,
+      0% 80%, 5% 60%, 0% 40%, 5% 20%
+    );
+}
+
+.about h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 35px;
+    color: #c63a12;
+    margin-bottom: 12px;
+}
+
+.about p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* FINAL MESSAGE */
+.ending {
+    background: #21180c;
+    color: #ffe09a;
+    text-align: center;
+    padding: 30px 20px;
+    border: 4px solid #fff0bd;
+    outline: 4px solid #21180c;
+    margin: 35px 5px;
+    transform: rotate(-1deg);
+}
+
+.ending h2 {
+    font-family: 'Bangers', cursive;
+    color: #ffca27;
+    font-size: clamp(30px, 6vw, 48px);
+    margin: 15px 0;
+}
+
+.ending p {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.end-label {
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+    background: #d63c16;
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 25px;
+    transform: rotate(-3deg);
+}
+
+/* FLOATING STARS */
+.star {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2;
+    animation: sparkle 4s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+    0%,100% { opacity: .3; transform: scale(.7) rotate(0); }
+    50% { opacity: 1; transform: scale(1.3) rotate(30deg); }
+}
+
+footer {
+    text-align: center;
+    padding: 25px 5px;
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+@media(max-width:600px) {
+    .page { padding: 12px; margin: 15px auto; }
+    .poster { padding: 18px 12px; border-width: 5px; }
+    .credits { padding: 25px 12px; }
+    .about { padding: 30px 18px; }
+    .burst { font-size: 27px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="star" style="top:10%;left:5%;font-size:30px">⭐</div>
+<div class="star" style="top:35%;right:6%;font-size:25px">✨</div>
+<div class="star" style="bottom:15%;left:8%;font-size:35px">⭐</div>
+
+<main class="page">
+<div class="poster">
+<div class="content">
+
+<div class="top-label">★ SPECIAL COMIC EDITION ★</div>
+
+<header class="hero">
+    <div class="crown">👑</div>
+    <h1>DON JUAN<br>TEÑOSO</h1>
+    <p>FILIPINO COMIC BOOK</p>
+</header>
+
+<div class="burst one">POW!</div>
+<div class="burst two">BAM!</div>
+
+<section class="credits">
+
+    <div class="section-title">PROJECT CREDITS</div>
+
+    <div class="label">CREATED BY</div>
+    <div class="value">DANIEL MATTHEW L. JARITO</div>
+
+    <div class="divider"></div>
+
+    <div class="label">SUBMITTED TO</div>
+    <div class="value small-value">MRS. LEICEL NAZARET</div>
+
+    <div class="divider"></div>
+
+    <div class="label">SUBJECT</div>
+    <div class="value small-value">FILIPINO</div>
+
+    <div class="divider"></div>
+
+    <div class="label">SCHOOL YEAR</div>
+    <div class="value small-value">2026 – 2027</div>
+
+</section>
+
+<section class="about">
+    <h2>ABOUT THE PROJECT</h2>
+    <p>
+    A comic adaptation of the timeless story of
+    <strong>Don Juan Teñoso</strong>, presented through
+    illustrations and storytelling. This project celebrates
+    imagination, adventure, courage, and the beauty of
+    Filipino literature.
+    </p>
+</section>
+
+<section class="ending">
+    <p>
+    "Every story becomes an adventure
+    when imagination comes to life!"
+    </p>
+
+    <h2>THANK YOU FOR READING!</h2>
+
+    <p>May every page inspire another adventure.</p>
+
+    <div class="end-label">👑 END OF COMIC BOOK 👑</div>
+</section>
+
+<footer>
+    MADE WITH CREATIVITY & IMAGINATION
+    <br>
+    © 2026 DANIEL MATTHEW L. JARITO
+</footer>
+
+</div>
+</div>
+</main>
+
+</body>
+</html>
